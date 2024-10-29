@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ApproveQuotation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="quotationId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ApproveQuotationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ApproveQuotationResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RejectQuotation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="quotationId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RejectQuotationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RejectQuotationResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddQuotationDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="quotationId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="itemPrice" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="discount" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddQuotationDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddQuotationDetailsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPendingQuotations">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPendingQuotationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPendingQuotationsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApprovedQuotations">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetApprovedQuotationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetApprovedQuotationsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddQuotationToInventory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="quotationId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddQuotationToInventoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddQuotationToInventoryResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApprovedRequestQuotations">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetApprovedRequestQuotationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetApprovedRequestQuotationsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ApproveQuotationSoapIn">
+    <wsdl:part name="parameters" element="tns:ApproveQuotation" />
+  </wsdl:message>
+  <wsdl:message name="ApproveQuotationSoapOut">
+    <wsdl:part name="parameters" element="tns:ApproveQuotationResponse" />
+  </wsdl:message>
+  <wsdl:message name="RejectQuotationSoapIn">
+    <wsdl:part name="parameters" element="tns:RejectQuotation" />
+  </wsdl:message>
+  <wsdl:message name="RejectQuotationSoapOut">
+    <wsdl:part name="parameters" element="tns:RejectQuotationResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddQuotationDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:AddQuotationDetails" />
+  </wsdl:message>
+  <wsdl:message name="AddQuotationDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:AddQuotationDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPendingQuotationsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPendingQuotations" />
+  </wsdl:message>
+  <wsdl:message name="GetPendingQuotationsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPendingQuotationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetApprovedQuotationsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetApprovedQuotations" />
+  </wsdl:message>
+  <wsdl:message name="GetApprovedQuotationsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetApprovedQuotationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddQuotationToInventorySoapIn">
+    <wsdl:part name="parameters" element="tns:AddQuotationToInventory" />
+  </wsdl:message>
+  <wsdl:message name="AddQuotationToInventorySoapOut">
+    <wsdl:part name="parameters" element="tns:AddQuotationToInventoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetApprovedRequestQuotationsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetApprovedRequestQuotations" />
+  </wsdl:message>
+  <wsdl:message name="GetApprovedRequestQuotationsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetApprovedRequestQuotationsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ManageQuotationServiceSoap">
+    <wsdl:operation name="ApproveQuotation">
+      <wsdl:input message="tns:ApproveQuotationSoapIn" />
+      <wsdl:output message="tns:ApproveQuotationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RejectQuotation">
+      <wsdl:input message="tns:RejectQuotationSoapIn" />
+      <wsdl:output message="tns:RejectQuotationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddQuotationDetails">
+      <wsdl:input message="tns:AddQuotationDetailsSoapIn" />
+      <wsdl:output message="tns:AddQuotationDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingQuotations">
+      <wsdl:input message="tns:GetPendingQuotationsSoapIn" />
+      <wsdl:output message="tns:GetPendingQuotationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApprovedQuotations">
+      <wsdl:input message="tns:GetApprovedQuotationsSoapIn" />
+      <wsdl:output message="tns:GetApprovedQuotationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddQuotationToInventory">
+      <wsdl:input message="tns:AddQuotationToInventorySoapIn" />
+      <wsdl:output message="tns:AddQuotationToInventorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApprovedRequestQuotations">
+      <wsdl:input message="tns:GetApprovedRequestQuotationsSoapIn" />
+      <wsdl:output message="tns:GetApprovedRequestQuotationsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ManageQuotationServiceSoap" type="tns:ManageQuotationServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ApproveQuotation">
+      <soap:operation soapAction="http://tempuri.org/ApproveQuotation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RejectQuotation">
+      <soap:operation soapAction="http://tempuri.org/RejectQuotation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddQuotationDetails">
+      <soap:operation soapAction="http://tempuri.org/AddQuotationDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingQuotations">
+      <soap:operation soapAction="http://tempuri.org/GetPendingQuotations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApprovedQuotations">
+      <soap:operation soapAction="http://tempuri.org/GetApprovedQuotations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddQuotationToInventory">
+      <soap:operation soapAction="http://tempuri.org/AddQuotationToInventory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApprovedRequestQuotations">
+      <soap:operation soapAction="http://tempuri.org/GetApprovedRequestQuotations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ManageQuotationServiceSoap12" type="tns:ManageQuotationServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ApproveQuotation">
+      <soap12:operation soapAction="http://tempuri.org/ApproveQuotation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RejectQuotation">
+      <soap12:operation soapAction="http://tempuri.org/RejectQuotation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddQuotationDetails">
+      <soap12:operation soapAction="http://tempuri.org/AddQuotationDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingQuotations">
+      <soap12:operation soapAction="http://tempuri.org/GetPendingQuotations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApprovedQuotations">
+      <soap12:operation soapAction="http://tempuri.org/GetApprovedQuotations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddQuotationToInventory">
+      <soap12:operation soapAction="http://tempuri.org/AddQuotationToInventory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApprovedRequestQuotations">
+      <soap12:operation soapAction="http://tempuri.org/GetApprovedRequestQuotations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ManageQuotationService">
+    <wsdl:port name="ManageQuotationServiceSoap" binding="tns:ManageQuotationServiceSoap">
+      <soap:address location="https://localhost:44343/ManageQuotationService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ManageQuotationServiceSoap12" binding="tns:ManageQuotationServiceSoap12">
+      <soap12:address location="https://localhost:44343/ManageQuotationService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

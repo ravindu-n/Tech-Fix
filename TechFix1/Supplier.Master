@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Supplier.master.cs" Inherits="TechFix1.Supplier" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Supplier Dashboard - TechFix</title>
+
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+
+    <link rel="stylesheet" href="CSS/SupplierStyle.css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <header class="header">
+            <div class="header-content">
+                <img src="Images/Logo.png" alt="TechFix Logo" class="logo" />
+                <h1>TechFix Supplier Dashboard</h1>
+             </div>
+        </header>
+
+        <div class="container">
+    
+            <aside class="sidebar">
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="SupplierPage.aspx">Home</a></li>
+                        <li><a href="ViewQuotationRequests.aspx">View Quotation Requests</a></li>
+                        <li><a href="Login.aspx">Logout</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <div class="main-content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+            </div>
+         </div>
+
+        <footer class="footer">
+            <p>&copy; 2024 TechFix. All rights reserved.</p>
+        </footer>
+    </form>
+</body>
+</html>

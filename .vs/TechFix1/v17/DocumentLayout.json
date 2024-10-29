@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ravin\\source\\repos\\TechFix1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{87E3C909-2816-4766-BB32-452D044F3331}|TechFix1\\TechFix1.csproj|c:\\users\\ravin\\source\\repos\\techfix1\\techfix1\\manageuserservice.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87E3C909-2816-4766-BB32-452D044F3331}|TechFix1\\TechFix1.csproj|solutionrelative:techfix1\\manageuserservice.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BEC50B3-4E24-4CE8-A7DF-291159673401}|BusinessLayer\\BusinessLayer.csproj|c:\\users\\ravin\\source\\repos\\techfix1\\businesslayer\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BEC50B3-4E24-4CE8-A7DF-291159673401}|BusinessLayer\\BusinessLayer.csproj|solutionrelative:businesslayer\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92732040-21AA-4238-A228-350891FC36AA}|DataLayer\\DataLayer.csproj|c:\\users\\ravin\\source\\repos\\techfix1\\datalayer\\databaseoperations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92732040-21AA-4238-A228-350891FC36AA}|DataLayer\\DataLayer.csproj|solutionrelative:datalayer\\databaseoperations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ManageUserService.asmx.cs",
+              "DocumentMoniker": "C:\\Users\\ravin\\source\\repos\\TechFix1\\TechFix1\\ManageUserService.asmx.cs",
+              "RelativeDocumentMoniker": "TechFix1\\ManageUserService.asmx.cs",
+              "ToolTip": "C:\\Users\\ravin\\source\\repos\\TechFix1\\TechFix1\\ManageUserService.asmx.cs",
+              "RelativeToolTip": "TechFix1\\ManageUserService.asmx.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-30T05:13:14.655Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\ravin\\source\\repos\\TechFix1\\BusinessLayer\\User.cs",
+              "RelativeDocumentMoniker": "BusinessLayer\\User.cs",
+              "ToolTip": "C:\\Users\\ravin\\source\\repos\\TechFix1\\BusinessLayer\\User.cs",
+              "RelativeToolTip": "BusinessLayer\\User.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-30T05:11:34.304Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DatabaseOperations.cs",
+              "DocumentMoniker": "C:\\Users\\ravin\\source\\repos\\TechFix1\\DataLayer\\DatabaseOperations.cs",
+              "RelativeDocumentMoniker": "DataLayer\\DatabaseOperations.cs",
+              "ToolTip": "C:\\Users\\ravin\\source\\repos\\TechFix1\\DataLayer\\DatabaseOperations.cs",
+              "RelativeToolTip": "DataLayer\\DatabaseOperations.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEEAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-30T05:06:18.8Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

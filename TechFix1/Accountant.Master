@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Accountant.master.cs" Inherits="TechFix1.Accountant" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Accounter Dashboard - TechFix</title>
+
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+
+    <link rel="stylesheet" href="CSS/AccountantSheet.css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <header class="header">
+            <div class="header-content">
+                <img src="Images/Logo.png" alt="TechFix Logo" class="logo" />
+                <h1>TechFix Accounter Dashboard</h1>
+            </div>
+        </header>
+
+        <div class="container">
+    
+            <aside class="sidebar">
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="AccountantPage.aspx">Home</a></li>
+                        <li><a href="ManageInventory.aspx">Manage Inventory</a></li>
+                        <li><a href="Login.aspx">Logout</a></li>
+                    </ul>
+                </nav>
+            </aside>
+        
+            <div class="main-content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2024 TechFix. All rights reserved.</p>
+        </footer>
+    </form>
+</body>
+</html>

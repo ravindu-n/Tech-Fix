@@ -1,0 +1,457 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    overflow-x: hidden; /* Allow vertical scrolling */
+    padding-top: 50px;
+    margin-bottom: 100px;
+}
+
+/* Header Styles */
+.header {
+    background-color: #2a3f54;
+    padding: 15px 0;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Make header fixed */
+    top: 0; /* Align it to the top */
+    left: 0;
+    width: 100%; /* Ensure it takes the full width */
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
+.header-content {
+    display: flex; /* Use flexbox to align items horizontally */
+    align-items: center; /* Center-aligns the logo and text vertically */
+    justify-content: center; /* Center content within the header */
+    max-width: 1200px;
+    margin: auto;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 28px;
+    letter-spacing: 1px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px; /* Space between the logo and the text */
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.sidebar {
+    width: 180px; /* Fixed width for sidebar */
+    background-color: #205d86;
+    padding: 20px;
+    height: calc(100vh - 60px); /* Full height minus header height */
+    position: fixed; /* Fixed position to keep it on the left side */
+    top: 81px; /* Adjust based on header height */
+    left: 0;
+}
+
+.navbar {
+    margin: 0;
+    padding: 0;
+}
+
+    .navbar ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .navbar li {
+        margin-bottom: 25px;
+    }
+
+    .navbar a {
+        text-decoration: none;
+        color: white;
+        padding: 10px 16px;
+        display: block; /* Makes the link fill the list item */
+        transition: background-color 0.3s;
+    }
+
+        .navbar a:hover {
+            background-color: #1e2e3b;
+            border-radius: 4px;
+        }
+
+.main-content {
+    flex-grow: 1;
+    margin-left: 130px; /* Adds space for the sidebar */
+    margin-right: 100px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    min-height: calc(100vh - 60px); /* Ensure minimum height */
+    padding-bottom: 60px; /* Space for the footer */
+    overflow-y: auto; /* Enables vertical scrolling */
+    box-sizing: border-box;
+}
+
+.logo {
+    width: 60px; /* Adjust the width as needed */
+    height: auto; /* Maintain the aspect ratio */
+    vertical-align: middle;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #2a3f54;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form Styles */
+.form-section {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+    .form-section label {
+        font-weight: bold;
+        color: #333;
+        margin-top: 10px;
+    }
+
+    .form-section input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+        .form-section input[type="text"]:focus {
+            border-color: #66afe9;
+            outline: none;
+        }
+
+    /* Button Styles */
+    .form-section button,
+    .form-section input[type="submit"],
+    .form-section input[type="button"] {
+        background-color: #2a3f54;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-right: 10px;
+    }
+
+        .form-section button:hover,
+        .form-section input[type="submit"]:hover,
+        .form-section input[type="button"]:hover {
+            background-color: #3478a7;
+        }
+
+    /* Clear Button */
+    .form-section .btnClear {
+        background-color: #2a3f54;
+    }
+
+        .form-section .btnClear:hover {
+            background-color: #3478a7;
+        }
+
+/* General GridView styling */
+.gridview {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+
+    .gridview th {
+        background-color: #2a3f54;
+        color: white;
+        text-align: left;
+        padding: 10px;
+    }
+
+    .gridview td {
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    /* Row hover effect */
+    .gridview tr:hover {
+        background-color: #f2f2f2;
+    }
+
+    /* Styling for the Request, Edit, and Delete buttons */
+    .gridview button,
+    .gridview .btnRequest,
+    .gridview input[type="submit"] {
+        background-color: #2a3f54;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        border-radius: 4px;
+    }
+
+        /* Button hover effect */
+        .gridview button:hover,
+        .gridview .btnRequest:hover,
+        .gridview input[type="submit"]:hover {
+            background-color: #3478a7;
+            color: white;
+        }
+
+    /* Edit and Delete buttons specifically */
+    .gridview .editButton,
+    .gridview .deleteButton {
+        background-color: #FFA500;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-size: 14px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+
+        .gridview .editButton:hover,
+        .gridview .deleteButton:hover {
+            background-color: #FF4500;
+        }
+
+    /* Column header styling */
+    .gridview th,
+    .gridview td {
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    .gridview th {
+        background-color: #3478a7;
+        color: white;
+        font-weight: bold;
+    }
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+    .gridview {
+        width: 100%;
+        font-size: 12px;
+    }
+
+        .gridview th,
+        .gridview td {
+            padding: 8px 10px;
+        }
+}
+
+/* Label styling */
+form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+/* Input and dropdown styling */
+form input[type="text"], form select {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+/* Button styling */
+    form input[type="button"], form input[type="submit"], form button {
+        background-color: #2a3f54;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin-top: 10px;
+        cursor: pointer;
+        border-radius: 4px;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+
+        form input[type="button"]:hover, form input[type="submit"]:hover, form button:hover {
+            background-color: #3478a7;
+        }
+
+/* Cancel button styling */
+form .btn-cancel {
+    background-color: #ff5c5c;
+    margin-left: 10px;
+}
+
+    form .btn-cancel:hover {
+        background-color: #ff3333;
+    }
+
+/* Heading styling */
+    form h2 {
+        text-align: center;
+        color: #2a3f54;
+        margin-bottom: 20px;
+    }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    form {
+        width: 100%;
+        padding: 10px;
+    }
+
+        form input[type="button"], form input[type="submit"], form button {
+            width: 10%;
+            margin: 10px 0;
+        }
+}
+
+/* Form container styling */
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+    /* Header styling */
+    .form-container h2 {
+        text-align: center;
+        color: #2a3f54;
+        margin-bottom: 20px;
+    }
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Label styling */
+.form-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Value label styling */
+.form-value {
+    padding: 5px;
+}
+
+/* Input field styling */
+.form-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* Button styling */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #4CAF50;
+    color: white;
+}
+
+    .btn-primary:hover {
+        background-color: #45a049;
+    }
+
+.btn-secondary {
+    background-color: #ff5c5c;
+    color: white;
+}
+
+    .btn-secondary:hover {
+        background-color: #ff3333;
+    }
+
+/* GridView styling */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+    table th, table td {
+        padding: 12px;
+        border: 1px solid #ddd;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    table th {
+        background-color: #3478a7;
+        color: white;
+    }
+
+    table tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    div {
+        width: 100%;
+        padding: 15px;
+    }
+
+        div input[type="text"], div .aspNetButton, div .aspNetLabel {
+            width: 100%;
+        }
+
+    table th, table td {
+        font-size: 12px;
+    }
+}

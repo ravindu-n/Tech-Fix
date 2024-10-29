@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CreateRequestQuotation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="inventoryID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="userID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="itemName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="brandNO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serialNO" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="quantity" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateRequestQuotationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateRequestQuotationResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRequestQuotation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="requestId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="inventoryID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="itemName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="brandNO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serialNO" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="quantity" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRequestQuotationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateRequestQuotationResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteRequestQuotation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="requestId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteRequestQuotationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteRequestQuotationResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPendingRequests">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPendingRequestsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPendingRequestsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ApproveRequestQuotation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="requestId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ApproveRequestQuotationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ApproveRequestQuotationResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RejectRequestQuotation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="requestId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RejectRequestQuotationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RejectRequestQuotationResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApprovedRequests">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetApprovedRequestsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetApprovedRequestsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindRequestQuotation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="requestId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindRequestQuotationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FindRequestQuotationResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRequestQuotationDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="requestQuotationId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRequestQuotationDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRequestQuotationDetailsResult" type="tns:RequestQuotation" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RequestQuotation">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="InventoryID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BrandNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SerialNO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantity" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="qStatus" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RequestDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateRequestQuotationStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="requestQuotationId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="newStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRequestQuotationStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateRequestQuotationStatusResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApprovedRequestQuotations">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetApprovedRequestQuotationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetApprovedRequestQuotationsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateRequestQuotationSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateRequestQuotation" />
+  </wsdl:message>
+  <wsdl:message name="CreateRequestQuotationSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateRequestQuotationResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRequestQuotationSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateRequestQuotation" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRequestQuotationSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateRequestQuotationResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRequestQuotationSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteRequestQuotation" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRequestQuotationSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteRequestQuotationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPendingRequestsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPendingRequests" />
+  </wsdl:message>
+  <wsdl:message name="GetPendingRequestsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPendingRequestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ApproveRequestQuotationSoapIn">
+    <wsdl:part name="parameters" element="tns:ApproveRequestQuotation" />
+  </wsdl:message>
+  <wsdl:message name="ApproveRequestQuotationSoapOut">
+    <wsdl:part name="parameters" element="tns:ApproveRequestQuotationResponse" />
+  </wsdl:message>
+  <wsdl:message name="RejectRequestQuotationSoapIn">
+    <wsdl:part name="parameters" element="tns:RejectRequestQuotation" />
+  </wsdl:message>
+  <wsdl:message name="RejectRequestQuotationSoapOut">
+    <wsdl:part name="parameters" element="tns:RejectRequestQuotationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetApprovedRequestsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetApprovedRequests" />
+  </wsdl:message>
+  <wsdl:message name="GetApprovedRequestsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetApprovedRequestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindRequestQuotationSoapIn">
+    <wsdl:part name="parameters" element="tns:FindRequestQuotation" />
+  </wsdl:message>
+  <wsdl:message name="FindRequestQuotationSoapOut">
+    <wsdl:part name="parameters" element="tns:FindRequestQuotationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRequestQuotationDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRequestQuotationDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetRequestQuotationDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRequestQuotationDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRequestQuotationStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateRequestQuotationStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRequestQuotationStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateRequestQuotationStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetApprovedRequestQuotationsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetApprovedRequestQuotations" />
+  </wsdl:message>
+  <wsdl:message name="GetApprovedRequestQuotationsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetApprovedRequestQuotationsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RequestQuotationServiceSoap">
+    <wsdl:operation name="CreateRequestQuotation">
+      <wsdl:input message="tns:CreateRequestQuotationSoapIn" />
+      <wsdl:output message="tns:CreateRequestQuotationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRequestQuotation">
+      <wsdl:input message="tns:UpdateRequestQuotationSoapIn" />
+      <wsdl:output message="tns:UpdateRequestQuotationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRequestQuotation">
+      <wsdl:input message="tns:DeleteRequestQuotationSoapIn" />
+      <wsdl:output message="tns:DeleteRequestQuotationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingRequests">
+      <wsdl:input message="tns:GetPendingRequestsSoapIn" />
+      <wsdl:output message="tns:GetPendingRequestsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ApproveRequestQuotation">
+      <wsdl:input message="tns:ApproveRequestQuotationSoapIn" />
+      <wsdl:output message="tns:ApproveRequestQuotationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RejectRequestQuotation">
+      <wsdl:input message="tns:RejectRequestQuotationSoapIn" />
+      <wsdl:output message="tns:RejectRequestQuotationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApprovedRequests">
+      <wsdl:input message="tns:GetApprovedRequestsSoapIn" />
+      <wsdl:output message="tns:GetApprovedRequestsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindRequestQuotation">
+      <wsdl:input message="tns:FindRequestQuotationSoapIn" />
+      <wsdl:output message="tns:FindRequestQuotationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestQuotationDetails">
+      <wsdl:input message="tns:GetRequestQuotationDetailsSoapIn" />
+      <wsdl:output message="tns:GetRequestQuotationDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRequestQuotationStatus">
+      <wsdl:input message="tns:UpdateRequestQuotationStatusSoapIn" />
+      <wsdl:output message="tns:UpdateRequestQuotationStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApprovedRequestQuotations">
+      <wsdl:input message="tns:GetApprovedRequestQuotationsSoapIn" />
+      <wsdl:output message="tns:GetApprovedRequestQuotationsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RequestQuotationServiceSoap" type="tns:RequestQuotationServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateRequestQuotation">
+      <soap:operation soapAction="http://tempuri.org/CreateRequestQuotation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRequestQuotation">
+      <soap:operation soapAction="http://tempuri.org/UpdateRequestQuotation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRequestQuotation">
+      <soap:operation soapAction="http://tempuri.org/DeleteRequestQuotation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingRequests">
+      <soap:operation soapAction="http://tempuri.org/GetPendingRequests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApproveRequestQuotation">
+      <soap:operation soapAction="http://tempuri.org/ApproveRequestQuotation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RejectRequestQuotation">
+      <soap:operation soapAction="http://tempuri.org/RejectRequestQuotation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApprovedRequests">
+      <soap:operation soapAction="http://tempuri.org/GetApprovedRequests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindRequestQuotation">
+      <soap:operation soapAction="http://tempuri.org/FindRequestQuotation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestQuotationDetails">
+      <soap:operation soapAction="http://tempuri.org/GetRequestQuotationDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRequestQuotationStatus">
+      <soap:operation soapAction="http://tempuri.org/UpdateRequestQuotationStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApprovedRequestQuotations">
+      <soap:operation soapAction="http://tempuri.org/GetApprovedRequestQuotations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RequestQuotationServiceSoap12" type="tns:RequestQuotationServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateRequestQuotation">
+      <soap12:operation soapAction="http://tempuri.org/CreateRequestQuotation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRequestQuotation">
+      <soap12:operation soapAction="http://tempuri.org/UpdateRequestQuotation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRequestQuotation">
+      <soap12:operation soapAction="http://tempuri.org/DeleteRequestQuotation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingRequests">
+      <soap12:operation soapAction="http://tempuri.org/GetPendingRequests" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApproveRequestQuotation">
+      <soap12:operation soapAction="http://tempuri.org/ApproveRequestQuotation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RejectRequestQuotation">
+      <soap12:operation soapAction="http://tempuri.org/RejectRequestQuotation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApprovedRequests">
+      <soap12:operation soapAction="http://tempuri.org/GetApprovedRequests" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindRequestQuotation">
+      <soap12:operation soapAction="http://tempuri.org/FindRequestQuotation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestQuotationDetails">
+      <soap12:operation soapAction="http://tempuri.org/GetRequestQuotationDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRequestQuotationStatus">
+      <soap12:operation soapAction="http://tempuri.org/UpdateRequestQuotationStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApprovedRequestQuotations">
+      <soap12:operation soapAction="http://tempuri.org/GetApprovedRequestQuotations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RequestQuotationService">
+    <wsdl:port name="RequestQuotationServiceSoap" binding="tns:RequestQuotationServiceSoap">
+      <soap:address location="https://localhost:44343/RequestQuotationService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RequestQuotationServiceSoap12" binding="tns:RequestQuotationServiceSoap12">
+      <soap12:address location="https://localhost:44343/RequestQuotationService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

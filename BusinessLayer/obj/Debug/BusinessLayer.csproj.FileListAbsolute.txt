@@ -1,0 +1,9 @@
+C:\Users\ravin\source\repos\TechFix1\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\ravin\source\repos\TechFix1\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\ravin\source\repos\TechFix1\BusinessLayer\bin\Debug\DataLayer.dll
+C:\Users\ravin\source\repos\TechFix1\BusinessLayer\bin\Debug\DataLayer.pdb
+C:\Users\ravin\source\repos\TechFix1\BusinessLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\ravin\source\repos\TechFix1\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\ravin\source\repos\TechFix1\BusinessLayer\obj\Debug\Business.EA331CBA.Up2Date
+C:\Users\ravin\source\repos\TechFix1\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\ravin\source\repos\TechFix1\BusinessLayer\obj\Debug\BusinessLayer.pdb
